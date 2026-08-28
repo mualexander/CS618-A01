@@ -2,7 +2,9 @@
   "name": "cs618-a01",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "moby": false
+    }
   },
   "postCreateCommand": "npm install && npm install --prefix backend",
   "postStartCommand": "docker start mongo || docker run --name mongo -d -p 27017:27017 -v mongo-data:/data/db mongo:7",
